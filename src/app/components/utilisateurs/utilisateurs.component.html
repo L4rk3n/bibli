@@ -1,0 +1,37 @@
+
+<div class="container">
+    <div class="left-panel">
+        <table>
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (user of sortedUser(); track user.iDutilisateur ) { 
+                <tr>
+                    <td>{{ user.nom }}</td>
+                    <td>
+                        <button (click)="selectUtilisateur(user)">Détails</button>
+                    </td>
+                </tr>
+            }
+           
+          </tbody>
+        </table>
+      </div>
+      <div class="right-panel">
+        <div>
+          <app-add-user (add)="addUser($event)"></app-add-user>
+        </div>
+    
+        <div *ngIf="selectedUtilisateur" class="details">
+          <h2>Détails de l'utilisateur Sélectionné</h2>
+          <p>Nom : {{ selectedUtilisateur.nom }}</p>
+          <p>Prénom : {{ selectedUtilisateur.prenom }}</p>
+          <p>Email : {{ selectedUtilisateur.email }}</p>
+          <p>adresse ID: {{ selectedUtilisateur.iDadresse }}</p>
+        </div>
+      </div>
+</div>

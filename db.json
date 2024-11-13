@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "email": "tf@tf.com",
+      "password": "$2a$10$ZAKyHUWKHGZiYnJR4wfCl.1Oe0rm1CGcS/jJosU6VDTgvTgB/Z9FW",
+      "id": 1
+    }
+  ],
+  "books": []
+}

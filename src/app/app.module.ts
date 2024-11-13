@@ -6,17 +6,24 @@ import { AuteursComponent } from './components/auteurs/auteurs.component';
 import { LivresComponent } from './components/livres/livres.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { provideHttpClient } from '@angular/common/http';
+import { AddBookComponent } from './components/livres/components/add-book/add-book.component';
+import { FormsModule } from '@angular/forms';
+import { AddAuthorComponent } from './components/auteurs/components/add-author/add-author/add-author.component';
+import { AdressesComponent } from './components/adresses/adresses.component';
+import { AddAdressesComponent } from './components/adresses/components/add-adresses/add-adresses.component';
+import { AddUserComponent } from './components/utilisateurs/components/add-user/add-user.component';
+import { UtilisateursComponent } from './components/utilisateurs/utilisateurs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuteursComponent,
-    LivresComponent,
-    NavbarComponent
+    NavbarComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]

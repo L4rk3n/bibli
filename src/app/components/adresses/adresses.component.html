@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="left-panel">
+      <table>
+        <thead>
+          <tr>
+            <th>Titre</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (Adresse of Adresses; track Adresse.iDadresse ) { 
+            <tr>
+            <td>{{ Adresse.rue }}</td>
+            <td>
+              <button (click)="selectAdresse(Adresse)">Détails</button>
+            </td>
+          </tr>
+          }
+         
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="right-panel">
+      <div>
+        <app-add-adresses (event)="getEvent($event)"></app-add-adresses>
+      </div>
+  
+      <div *ngIf="selectedAdresse" class="details">
+        <h2>Détails d'adresse Sélectionné</h2>
+        <p>rue  : {{ selectedAdresse.rue }}</p>
+        <p>numéro : {{ selectedAdresse.numero }}</p>
+        <p>Boite : {{ selectedAdresse.boite }}</p>
+        <p>Localité : {{ selectedAdresse.localite }}</p>
+        <p>Pays : {{ selectedAdresse.pays }}</p>
+        <p>Utilisateur :{{selectedAdresse.utilisateurId}}</p>
+
+      </div>
+    </div>
+  </div>

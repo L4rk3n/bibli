@@ -1,5 +1,29 @@
-<div *ngFor="let Auteur of Auteurs">
-    <h2>{{ Auteur.iDauteur}}</h2>
-    <p>Nom: {{ Auteur.nom }}</p>
-    <p>Prénom : {{ Auteur.prenom }}</p>
+
+  <div class="container">
+    <div class="left-panel">
+      <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (auteur of Auteurs; track auteur.iDauteur ) { 
+            <tr>
+            <td>{{ auteur.nom }}</td>
+            <td>{{ auteur.prenom }}</td>
+            </tr>
+          }
+         
+        </tbody>
+      </table>
+    </div>
+  
+
+<div class="right-panel">
+  <div>
+    <app-add-author (event)="getEvent($event)"></app-add-author>
   </div>
+</div>
+</div>

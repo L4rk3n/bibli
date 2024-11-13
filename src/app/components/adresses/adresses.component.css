@@ -1,7 +1,7 @@
 .container {
-  display: flex;
-  justify-content: space-between;
-}
+    display: flex;
+    justify-content: space-between;
+  }
   
   .left-panel {
     width: 40%; 
@@ -42,4 +42,3 @@
     padding: 1rem;
     border: 1px solid #ccc;
   }
-  

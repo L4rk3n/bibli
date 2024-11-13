@@ -1,7 +1,7 @@
 .container {
-  display: flex;
-  justify-content: space-between;
-}
+    display: flex;
+    justify-content: space-between;
+  }
   
   .left-panel {
     width: 40%; 
@@ -37,9 +37,8 @@
   }
   
   .details {
-    margin-top: 2rem; 
+    margin-top: 2rem; /* Espace au-dessus des détails */
     background-color: #f4f4f4;
     padding: 1rem;
     border: 1px solid #ccc;
   }
-  

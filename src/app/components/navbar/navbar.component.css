@@ -8,8 +8,8 @@ nav {
     color: white;
     padding: 1rem;
     display: flex;
-    flex-direction: column; /* Affiche les éléments en colonne */
-    justify-content: start; /* Commence les éléments du début */
+    flex-direction: column; 
+    justify-content: start; 
   }
   
   nav ul {
@@ -17,11 +17,11 @@ nav {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; /* Affiche les liens verticalement */
+    flex-direction: column; 
   }
   
   nav ul li {
-    margin: 1rem 0; /* Ajoute de l'espace entre les liens */
+    margin: 1rem 0; 
   }
   
   nav ul li a {

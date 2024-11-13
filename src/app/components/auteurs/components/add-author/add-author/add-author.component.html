@@ -1,0 +1,21 @@
+<div class="add-book-container">
+    <h2>Ajout d'auteur</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="Nom">Nom :</label>
+        <input type="text" id="Nom" formControlName="Nom" name="Nom">
+        @if (form.get('Nom')?.errors) {
+          <div>{{ form.get('Nom')?.errors |json }} </div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="Prenom">Prenom :</label>
+        <input type="text" id="Prenom" formControlName="Prenom" name="Prenom">
+        @if (form.get('Prenom')?.errors) {
+          <div>{{ form.get('Prenom')?.errors |json }} </div>
+        }
+      </div>
+      <button type="submit">Ajouter l'auteur</button>
+    </form>
+  </div>

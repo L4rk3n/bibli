@@ -6,7 +6,7 @@ import { Auteur } from '../Models/Auteurs.model';
 @Injectable({
   providedIn: 'root'
 })
-export class LivresService {
+export class AuteursService {
   private apiUrl = 'https://localhost:7211/api/Auteurs';
 
   constructor(private http: HttpClient) {}
@@ -14,4 +14,8 @@ export class LivresService {
   getAuthors(): Observable<Auteur[]> {
     return this.http.get<Auteur[]>(this.apiUrl);
   }
+  addAuthor(author: Auteur):Observable<Auteur> {
+    return this.http.post<Auteur>(this.apiUrl, author);
+  }
 }
+

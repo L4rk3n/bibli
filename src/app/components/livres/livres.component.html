@@ -1,7 +1,39 @@
-<div *ngFor="let Livre of Livres">
-    <h2>{{ Livre.titre }}</h2>
-    <p>Prix : {{ Livre.prix }}</p>
-    <p>Stock de location : {{ Livre.stockLocation }}</p>
-    <p>Stock de vente : {{ Livre.stockAchat }}</p>
+<div class="container">
+  <div class="left-panel">
+    <table>
+      <thead>
+        <tr>
+          <th>Titre</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (Livre of Livres; track Livre.isbn ) { 
+          <tr>
+          <td>{{ Livre.titre }}</td>
+          <td>
+            <button (click)="selectLivre(Livre)">Détails</button>
+          </td>
+        </tr>
+        }
+       
+      </tbody>
+    </table>
   </div>
-  
+
+  <div class="right-panel">
+    <div>
+      <app-add-book (event)="getEvent($event)"></app-add-book>
+    </div>
+
+    <div *ngIf="selectedLivre" class="details">
+      <h2>Détails du Livre Sélectionné</h2>
+      <p>Titre : {{ selectedLivre.titre }}</p>
+      <p>Prix : {{ selectedLivre.prix }}</p>
+      <p>Stock de location : {{ selectedLivre.stockLocation }}</p>
+      <p>Stock de vente : {{ selectedLivre.stockAchat }}</p>
+      <p>Genre : {{ selectedLivre.iDgenre }}</p>
+      <p>Description : {{ selectedLivre.isbn }}</p>
+    </div>
+  </div>
+</div>

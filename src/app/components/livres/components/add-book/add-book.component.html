@@ -1,0 +1,47 @@
+<div class="add-book-container">
+    <h2>Ajout de livre</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="titre">Titre :</label>
+        <input type="text" id="titre" formControlName="titre" name="titre">
+        @if (form.get('titre')?.errors) {
+          <div>{{ form.get('titre')?.errors |json }} </div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="idGenre">ID Genre :</label>
+        <input type="text" id="idGenre" formControlName="idGenre" name="idGenre">
+        @if (form.get('idGenre')?.errors) {
+          <div>{{ form.get('idGenre')?.errors |json }} </div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="prix">Prix :</label>
+        <input type="text" id="prix" formControlName="prix" name="prix">
+        @if (form.get('prix')?.errors) {
+          <div>{{ form.get('prix')?.errors |json }} </div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="stockLocation">Stock de locations:</label>
+        <input type="text" id="stockLocation" formControlName="stockLocation" name="stockLocation">
+        @if (form.get('stockLocation')?.errors) {
+          <div>{{ form.get('stockLocation')?.errors |json }} </div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="stockAchat">Stock de ventes :</label>
+        <input type="text" id="stockAchat" formControlName="stockAchat" name="stockAchat">
+        @if (form.get('stockAchat')?.errors) {
+          <div>{{ form.get('stockAchat')?.errors |json }} </div>
+        }
+      </div>
+      <button type="submit">Ajouter le Livre</button>
+      
+    </form>
+  </div>
+  

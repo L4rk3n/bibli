@@ -1,5 +1,5 @@
 export interface Livre {
-    isbn: number
+    isbn?: number
     titre: string
     iDgenre: number
     prix: number

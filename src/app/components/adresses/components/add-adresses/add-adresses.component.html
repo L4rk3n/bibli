@@ -1,0 +1,56 @@
+<div class="add-adresses-container">
+    <h2>Ajout de livre</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="rue">rue :</label>
+        <input type="text" id="rue" formControlName="rue" name="rue">
+        @if (form.get('rue')?.errors) {
+          <div>{{ form.get('rue')?.errors |json }} </div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="numero">numero :</label>
+        <input type="text" id="numero" formControlName="numero" name="numero">
+        @if (form.get('numero')?.errors) {
+          <div>{{ form.get('numero')?.errors |json }} </div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="boite">boite :</label>
+        <input type="text" id="boite" formControlName="boite" name="boite">
+        @if (form.get('boite')?.errors) {
+          <div>{{ form.get('boite')?.errors |json }} </div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="localite">Localité :</label>
+        <input type="text" id="localite" formControlName="localite" name="localite">
+        @if (form.get('localite')?.errors) {
+          <div>{{ form.get('localite')?.errors |json }} </div>
+        }
+      </div>
+
+      
+
+      <div class="form-group">
+        <label for="pays">Pays:</label>
+        <input type="text" id="pays" formControlName="pays" name="pays">
+        @if (form.get('pays')?.errors) {
+          <div>{{ form.get('pays')?.errors |json }} </div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="utilisateurId">ID de l'utilisateur :</label>
+        <input type="text" id="utilisateurId" formControlName="utilisateurId" name="utilisateurId">
+        @if (form.get('utilisateurId')?.errors) {
+          <div>{{ form.get('utilisateurId')?.errors |json }} </div>
+        }
+      </div>
+      <button type="submit">Ajouter l'adresse</button>
+      
+    </form>
+  </div>

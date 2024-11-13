@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Auteur } from '../../Models/Auteurs.model';
-import { LivresService } from '../../Services/Auteurs.service';
+import { AuteursService } from '../../Services/Auteurs.service';
+
 
 @Component({
   selector: 'app-auteurs',
@@ -12,10 +13,17 @@ export class AuteursComponent implements OnInit {
   Auteurs :Auteur []= [];
 
 
-  constructor(private LS: LivresService) {}
+  constructor(private AS: AuteursService) {}
 
   ngOnInit(): void {
-    this.LS.getAuthors().subscribe((data: Auteur[]) => {
+    this.loadData();
+  }
+  getEvent(event: boolean): void {
+    this.loadData(); 
+  }
+
+  loadData() {
+    this.AS.getAuthors().subscribe((data: Auteur[]) => {
       this.Auteurs = data;
     });
   }
