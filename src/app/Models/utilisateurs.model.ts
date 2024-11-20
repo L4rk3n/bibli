@@ -3,7 +3,7 @@ export interface Utilisateur {
     iDadresse: number
     nom: string
     prenom: string
-    dateNaissance: string
+    datedeNaissance: string
     email: string
     password: string
   }

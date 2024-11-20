@@ -1,9 +1,9 @@
 nav {
-    position: fixed;
+    position: fixed; 
     top: 0;
     left: 0;
     height: 100%;
-    width: 100px; /* Ajustez la largeur selon vos besoins */
+    width: 100px; 
     background-color: #333;
     color: white;
     padding: 1rem;

@@ -1,7 +1,10 @@
 .content {
+
     margin-left: 200px; 
     padding: 1rem;
     
   }
   
-  
+  router-outlet {
+    margin-left: 200px; 
+  }

@@ -1,1 +1,55 @@
-<p>add-user works!</p>
+<div class="add-book-container">
+    <h2>Ajout d'un utilisateur</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="Nom">Nom :</label>
+        <input type="text" id="Nom" formControlName="Nom" name="Nom">
+        @if (form.get('Nom')?.errors) {
+          <div>{{ form.get('Nom')?.errors |json }} </div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="Prenom">Prénom :</label>
+        <input type="text" id="Prenom" formControlName="Prenom" name="Prenom">
+        @if (form.get('Prenom')?.errors) {
+          <div>{{ form.get('Prenom')?.errors |json }} </div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="Email">Email :</label>
+        <input type="text" id="Email" formControlName="Email" name="Email">
+        @if (form.get('Email')?.errors) {
+          <div>{{ form.get('Email')?.errors |json }} </div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="datedenaissance">Date de naissance:</label>
+        <input type="text" id="datedenaissance" formControlName="datedenaissance" name="datedenaissance">
+        @if (form.get('datedenaissance')?.errors) {
+          <div>{{ form.get('datedenaissance')?.errors |json }} </div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="Password">Mot de Passe:</label>
+        <input type="text" id="Password" formControlName="Password" name="Password">
+        @if (form.get('Password')?.errors) {
+          <div>{{ form.get('Password')?.errors |json }} </div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="idadresse">ID de l'adresse:</label>
+        <input type="text" id="idadresse" formControlName="idadresse" name="idadresse">
+        @if (form.get('idadresse')?.errors) {
+          <div>{{ form.get('idadresse')?.errors |json }} </div>
+        }
+      </div>
+
+      <button type="submit">Ajouter l''utilisateur</button>
+      
+    </form>
+  </div>

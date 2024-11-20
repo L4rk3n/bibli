@@ -1,5 +1,7 @@
-import { Component, output } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { Utilisateur } from '../../../../Models/utilisateurs.model';
+import { fUserCreate } from '../../forms/user.form';
+import { UtilisateursService } from '../../../../Services/Utilisateurs.service';
 
 @Component({
   selector: 'app-add-user',
@@ -8,10 +10,15 @@ import { Utilisateur } from '../../../../Models/utilisateurs.model';
 })
 export class AddUserComponent {
   addEvent = output<Utilisateur>({ alias: 'add'});
+  form = fUserCreate()
+  $user = inject(UtilisateursService);
 
-  ngOnInit() {
-    setTimeout(() => {
-      this.addEvent.emit({ email: 'Blop', iDadresse: 42, nom: 'Blop', prenom: 'Blop', dateNaissance: 'Blop', password: 'Blop', iDutilisateur: 42 });
-    }, 10_000)
-  }
+onSubmit(): void {
+ if (this.form.valid) {
+   this.$user.addUtilisateurs(this.form.value as Utilisateur).subscribe(() => {
+     this.form = fUserCreate();
+     this.addEvent.emit(this.form.value as Utilisateur);
+     });
+}
+}
 }
